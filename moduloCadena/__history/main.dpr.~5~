@@ -1,0 +1,36 @@
+program main;
+uses
+  UCadena;
+
+procedure PTiene2Pares;
+var n : cardinal;
+    res : boolean;
+begin
+  while True do
+  begin
+    write('ingrese un numero: ');
+    readln(n);
+    res :=  Tiene2Pares(n);
+    writeln(res);
+  end;
+end;
+
+
+procedure prueba;
+var r : string;
+    dato : byte;
+begin
+  while True do
+  begin
+    write('ingresa un numero: ');
+    readln(dato);
+    r := Romano(dato);
+    writeln(r);
+  end;
+
+end;
+
+begin
+   prueba;
+  readln;
+end.

@@ -1,0 +1,95 @@
+unit UCadena;
+
+interface
+  //definen los menotodos
+  Function Tiene2Pares(x : Cardinal): boolean;
+  Function EsPar(x : Cardinal): boolean;
+  Function Romano(x : byte) : String;
+  Function RomanoIf(x : byte) : String;
+implementation
+  {implemetan los metodos}
+
+  //------------------------------------------------------------
+  Function Tiene2Pares(x : Cardinal): boolean;
+  var d, c : byte;
+      r : boolean;
+  begin
+    c := 0;
+    r := false;
+    while (x > 0)AND (NOT r) do
+    begin
+      d := x mod 10;
+      x := x div 10;
+      if (EsPar(d)) then   // d mod 2 = 0 ;
+      begin
+        c := c + 1;
+      end;
+      if c = 2 then
+      begin
+        r := true;
+      end;
+    end;
+    Tiene2Pares := r;
+  end;
+
+  //------------------------------------------------------------
+  Function EsPar(x : Cardinal): boolean;
+  begin
+    EsPar :=  (x mod 2 = 0);
+  end;
+                  //11
+  Function Romano(x : byte) : String;
+  var r : String;
+  begin
+    case x of
+      1 : begin
+            r := 'I';
+            writeln('es el 1');
+          end;
+      2 : r := 'II';
+      3 : r := 'III';
+      4 : r := 'IV';
+      5 : r := 'V';
+      6 : r := 'VI';
+      7 : r := 'VII';
+      8 : r := 'VIII';
+      9 : r := 'IX';
+      10 : r := 'X';
+      else
+        r := '';
+    end;
+    Romano := r;
+  end;
+
+ //------------------------------------------------------------
+
+ Function RomanoIf(x : byte) : String;
+  var r : String;
+  begin
+    if x = 1 then begin
+      r := 'I';
+      writeln('es el 1');
+    end else if x = 2 then
+      r := 'II'
+    else if x = 3 then
+      r := 'III'
+    else if x = 4 then
+      r := 'IV'
+    else if x = 5 then
+      r := 'V'
+    else if x = 6 then
+      r := 'VI'
+    else if x = 7 then
+      r := 'VII'
+    else if x = 8 then
+      r := 'VIII'
+    else if x = 9 then
+      r := 'IX'
+    else if x = 10 then
+      r := 'X'
+    else
+      r := 'cadena error';
+
+    RomanoIf := r;
+  end;
+end.

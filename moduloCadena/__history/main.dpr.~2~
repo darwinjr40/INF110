@@ -1,0 +1,8 @@
+program main;
+
+uses
+  UCadena in 'UCadena.pas';
+
+begin
+
+end.

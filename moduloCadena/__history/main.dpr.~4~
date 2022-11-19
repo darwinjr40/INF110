@@ -1,0 +1,15 @@
+program main;
+uses
+  UCadena;
+var n : cardinal;
+    res : boolean;
+begin
+  while True do
+  begin
+    write('ingrese un numero: ');
+    readln(n);
+    res :=  Tiene2Pares(n);
+    writeln(res);
+  end;
+
+end.
