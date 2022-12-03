@@ -8,7 +8,7 @@ interface
   Function RomanoIf(x : byte) : String;
   Function Romano(x : byte) : String;
   Function Romano2(x : byte) : String;
-  function Restar(a, b : cardinal): integer;
+  function Restar(a, b : cardinal): Cardinal;
 
 implementation
   {implemetan los metodos}
@@ -158,9 +158,9 @@ implementation
 
 
   //--------------------------------------------------
-  function Restar(a, b : cardinal): integer;
-  var p, res : integer;
-      da, db, d : integer;
+  function Restar(a, b : cardinal): Cardinal;
+  var p, res : cardinal;
+      da, db, d : byte;
        r : integer;
   begin
     p := 1;
@@ -181,7 +181,6 @@ implementation
         end;
       end;
       r := da - db;
-//      writeln(r);
       res := r * p + res;
       p := p * 10;
     end;

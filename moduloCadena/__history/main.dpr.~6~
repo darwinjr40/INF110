@@ -30,25 +30,7 @@ begin
 
 end;
 
-//restar octal---------------------------------------------------------
-procedure restar_octal;
-var r : string;
-    a,b : integer;
 begin
-  while True do
-  begin
-    write('ingresa un numero a: ');
-    readln(a);
-    write('ingresa un numero b: ');
-    readln(b);
-    writeln(Restar(a, b));
-  end;
-
-end;
-
-//main principal
-begin
-//   prueba;
-  restar_octal();
+   prueba;
   readln;
 end.

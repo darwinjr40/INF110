@@ -8,8 +8,6 @@ interface
   Function RomanoIf(x : byte) : String;
   Function Romano(x : byte) : String;
   Function Romano2(x : byte) : String;
-  function Restar(a, b : cardinal): integer;
-
 implementation
   {implemetan los metodos}
 
@@ -155,39 +153,4 @@ implementation
     r := r + RomanoUnidad(x mod 10);
     Romano2 := r;
   end;
-
-
-  //--------------------------------------------------
-  function Restar(a, b : cardinal): integer;
-  var p, res : integer;
-      da, db, d : integer;
-       r : integer;
-  begin
-    p := 1;
-    res := 0;
-    while ((a > 0) or (b > 0)) do
-    begin
-      da := a mod 10;
-      db := b mod 10;
-      a := a div 10;
-      b := b div 10;
-      if (da < db) then
-      begin
-        d := a mod 10;
-        if d > 0 then
-        begin
-          da := da + 8;
-          a := a - 1;
-        end;
-      end;
-      r := da - db;
-//      writeln(r);
-      res := r * p + res;
-      p := p * 10;
-    end;
-
-    Restar := res;
-  end;
-
 end.
-
