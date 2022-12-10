@@ -33,7 +33,7 @@ end;
 //restar octal---------------------------------------------------------
 procedure restar_octal;
 var r : string;
-    a,b : cardinal;
+    a,b : integer;
 begin
   while True do
   begin
@@ -45,25 +45,10 @@ begin
   end;
 
 end;
-//------------------------------------------------
-procedure Enesimo;
-var cantidad : byte;
-    resultado : byte;
-begin
-  while True do
-  begin
-    write('ingrese el n-simo elemento: ');
-    readln(cantidad);
-    resultado := Nesimo(cantidad);  //cantidad = 0
-//    cargar(cantidad);  //cantidad = 100
-    writeln(resultado);
-  end;
-end;
 
 //main principal
 begin
 //   prueba;
-//  restar_octal();
-Enesimo();
+  restar_octal();
   readln;
 end.

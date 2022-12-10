@@ -54,8 +54,8 @@ begin
   begin
     write('ingrese el n-simo elemento: ');
     readln(cantidad);
-    resultado := Nesimo(cantidad);  //cantidad = 0
-//    cargar(cantidad);  //cantidad = 100
+    resultado := Nesimo(cantidad);
+    resultado := cargar(cantidad);
     writeln(resultado);
   end;
 end;
