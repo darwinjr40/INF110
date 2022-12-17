@@ -59,27 +59,11 @@ begin
     writeln(resultado);
   end;
 end;
-//------------------------------------------
-procedure EliminarNoLetrasP;
-var cadena : string;
-    dato : byte;
-begin
-  while True do
-  begin
-    write('ingresa un cadena: ');
-    readln(cadena);
-    EliminarNoLetras(cadena);
-    writeln('cadena resultado => ', cadena);
-  end;
 
-end;
-
-
-//main principal--------------------
+//main principal
 begin
 //   prueba;
 //  restar_octal();
-//Enesimo();
-EliminarNoLetrasP();
+Enesimo();
   readln;
 end.

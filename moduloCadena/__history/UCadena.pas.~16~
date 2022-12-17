@@ -10,7 +10,6 @@ interface
   Function Romano2(x : byte) : String;
   function Restar(a, b : cardinal): integer;
   function Nesimo(n : byte) : byte;
-  function EsLetra(c : char): boolean;
   procedure cargar(var n : byte);
 
   procedure EliminarNoLetras(var x : string);
@@ -222,46 +221,8 @@ implementation
   //------------------------
   {x='123hola   h' => x='hola h'}
   procedure EliminarNoLetras(var x : string);
-  var n, i : byte;
   begin
-    n := length(x);
-    i := 1;
-    while (i <= n) do
-    begin
-//      if ((Not EsLetra(x[i])) AND
-//      NOT((x[i]=' ') AND ((i+1)<=n) And (EsLetra(x[i+1])))) then
-//      begin
-//        Delete(x,i,1);
-//        n := n - 1;
-//      end else begin
-//        i := i + 1;
-//      end;
-      if (Not EsLetra(x[i])) then
-      begin
-         if ((i+1)<=n) And (EsLetra(x[i+1])) then
-         begin
-          x[i] := ' ';
-          i := i + 1;
-         end else begin
-          Delete(x,i,1);
-          n := n - 1;
-         end;
-      end else begin
-        i := i + 1;
-      end;
 
-    end;
-  end;
-  //-------------------------
-  function EsLetra(c : char): boolean;
-  var letras : string;
-      posicion : byte;
-      resultado : boolean;
-  begin
-    letras := 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ';
-    posicion := Pos(c, letras);
-    resultado := (posicion > 0) ;
-    EsLetra := resultado;
   end;
 end.
 
