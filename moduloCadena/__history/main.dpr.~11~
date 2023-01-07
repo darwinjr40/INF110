@@ -74,25 +74,12 @@ begin
 
 end;
 
-//------------------------------------------
-procedure EliminarNoDigOrEspP;
-var cadena : string;
-begin
-  while True do
-  begin
-    write('ingresa un cadena: ');
-    readln(cadena);
-    EliminarNoDigOrEsp(cadena);
-    writeln('cadena resultado => (', cadena, ')');
-  end;
 
-end;
 //main principal--------------------
 begin
 //   prueba;
 //  restar_octal();
 //Enesimo();
-//EliminarNoLetrasP();
-EliminarNoDigOrEspP();
+EliminarNoLetrasP();
   readln;
 end.

@@ -11,10 +11,11 @@ interface
   function Restar(a, b : cardinal): integer;
   function Nesimo(n : byte) : byte;
   function EsLetra(c : char): boolean;
+
   procedure cargar(var n : byte);
-
   procedure EliminarNoLetras(var x : string);
-
+  function  EsDigOrEsp(c : char): boolean;
+  procedure EliminarNoDigOrEsp(var x: string);
 implementation
   {implemetacion de los metodos}
 
@@ -262,6 +263,35 @@ implementation
     posicion := Pos(c, letras);
     resultado := (posicion > 0) ;
     EsLetra := resultado;
+  end;
+
+  //-----------------------------------------
+  function EsDigOrEsp(c : char): boolean;
+  var DigitosYEspacio : string;
+      posicion : byte;
+      resultado : boolean;
+  begin
+    DigitosYEspacio := '0123456789 ';
+    posicion := Pos(c, DigitosYEspacio);
+    resultado := (posicion > 0);
+    EsDigOrEsp := resultado;
+  end;
+
+  procedure EliminarNoDigOrEsp(var x: string);
+  var i, n: byte;
+  begin
+    i := 1;
+    n := Length(x);
+    while (i <= n) do
+    begin
+      if EsDigOrEsp(x[i]) then
+      begin
+        i := i + 1;  
+      end else begin 
+        Delete(x, i, 1);
+        n := n - 1;
+      end;
+    end;
   end;
 end.
 
